@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+  <!-- about section -->
+
+<section class="about_section layout_padding">
+  <div class="container  ">
+    <div class="heading_container heading_center">
+      <h2>
+        About <span>Us</span>
+      </h2>
+      <p>
+        Magni quod blanditiis non minus sed aut voluptatum illum quisquam aspernatur ullam vel beatae rerum ipsum voluptatibus
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="img-box">
+          <img src="{{about_objects.photo.url}}" alt="" width="800" height="350">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <h3>
+            {{about_objects.name}}</h3>
+          <p>{{about_objects.about}}</p>
+          <a href="/home#about">
+            View All
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- end about section -->
+
+
+{% comment %} <section class="about_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>About <span>Us</span></h2>
+      <p>Magni quod blanditiis non minus sed aut voluptatum illum quisquam aspernatur ullam vel beatae rerum ipsum voluptatibus</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="{{about_objects.photo.url}}" alt="" width="800" height="300">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <h3>{{about_objects.name}}</h3>
+          <p>{{about_objects.about}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center"> <!-- Center the "View All" link -->
+          <div class="btn-box">
+              <a href="/home#services">View All</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>  {% endcomment %}
+
+
+{% endblock content %}

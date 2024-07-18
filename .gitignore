@@ -1,0 +1,18 @@
+# .gitignore fayli
+
+# Python kompilyatsiya qilingan fayllar
+__pycache__/
+*.py[cod]
+
+# Log fayllar
+*.log
+
+# Virtual muhitlar
+venv/
+.env
+
+# Maxfiy fayllar
+config/settings.py
+
+# Sistema fayllari
+.DS_Store

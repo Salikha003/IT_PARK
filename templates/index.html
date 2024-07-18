@@ -1,0 +1,328 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+   <!-- slider section -->
+<section class="slider_section ">
+  <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      {% for i in courses_objects %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="detail-box">
+                <h1>{{i.name}}</h1>
+                <p>{{i.about | slice:"500"}}</p>
+                <div class="btn-box">
+                  <a href="{% url "about" i.pk %}" class="btn1">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="img-box">
+                <img src="{{i.photo.url}}" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <ol class="carousel-indicators">
+      {% for i in courses_objects %}
+      <li data-target="#customCarousel1" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+<!-- end slider section -->
+
+
+ <!-- service section -->
+
+<section id="services" class="service_section layout_padding">
+  <div class="service_container">
+    <div class="container ">
+      <div class="heading_container heading_center">
+        <h2>
+          Our <span>Services</span>
+        </h2>
+        <br>
+        <p>     
+        Our company offers a wide range of services.
+          Each service is designed to fully meet the needs of our clients and take their businesses to new heights.
+        </p>
+      </div>
+      <div class="row">
+        {% for service in services_objects %}
+        <div class="col-md-4">
+          <div class="box">
+            <div class="img-box">
+              <img src="{{service.photo.url}}" alt="" width="500" height="300">
+            </div>
+            <div class="detail-box">
+              <h5>
+                {{service.name}}
+              </h5>
+              <p>
+                {{service.about | slice:"100" }}
+              </p>
+              <a href="{% url "services" service.pk %}">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+      </div>
+      <div class="row">
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="btn-box">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- end service section -->
+
+
+  <!-- about section -->
+
+  <section id="about" class="about_section layout_padding">
+    <div class="container  ">
+      <div class="heading_container heading_center">
+        <h2>
+          About <span>Us</span>
+        </h2>
+        <br>
+        <p>     
+          Our company is one of the leading companies specializing in offering innovative and quality services.
+           Our goal is to meet the needs of our customers and contribute to their success.
+        </p>
+      </div>
+      <div class="row">
+        {% for i in courses_object %}
+        <div class="col-md-6 ">
+          
+          <div class="img-box">
+            <img src="{{i.photo.url}}" alt="" width="500" height="300">
+          </div>
+          <br>
+          <br>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h3>
+              {{i.name}}
+            </h3>
+            <p>
+              {{i.about | slice:"400"}}
+            </p>
+            <a href="{% url "about" i.pk %}">
+              Read More
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+  <!-- why section -->
+
+  <section id="why us" class="why_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Why Choose <span>Us</span>
+        </h2>
+      </div>
+      <div class="why_container">
+        {% for i in why_choose_us %}
+        <div class="box">
+          <div class="img-box" style="overflow: hidden;">
+            <img src="{{i.photo.url}}" style="width: 100%; height: auto;" alt="{{i.name}}">
+          </div>
+          <div class="detail-box">
+            <h5>{{i.name}}</h5>
+            <p>{{i.about}}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- end why section -->
+
+
+  <!-- team section -->
+  <section id="team" class="team_section layout_padding">
+    <div class="container-fluid">
+      <div class="heading_container heading_center">
+        <h2 class="">
+          Our <span> Team</span>
+        </h2>
+      </div>
+
+      <div class="team_container">
+        <div class="row">
+          {% for i in teacher %}
+            <div class="col-lg-3 col-sm-6">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="{{i.photo.url}}" class="img1" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{i.name}}
+                  </h5>
+                  <p>
+                    {{i.about}}
+                  </p>
+                </div>
+                <div class="social_box" style="margin-top:-40px;">
+                  <a href="{{i.telegram}}" style="margin-right: 20px;">
+                    <i class='bx bxl-telegram'></i>
+                  </a>
+                  <a href="{{i.instagram}}" style="margin-right: 20px;">
+                    <i class='bx bxl-instagram-alt' style='color:#ffffff' ></i>
+                  </a>
+                  <a href="{{i.github}}" style="margin-right: 20px;">
+                    <i class='bx bxl-github'></i>
+                  </a>
+                  <a href="#">
+                    <i class='bx bxl-linkedin'></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end team section -->
+
+
+  <!-- client section -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    .carousel-wrap {
+      margin: 50px auto;
+      max-width: 1000px; /* Customize this width based on your layout */
+    }
+    .box {
+      border: 1px solid #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      width: 100%; /* Ensure full width */
+      height: 300px; /* Set a fixed height for consistency */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .img-box img {
+      max-width: 100%;
+      height: auto;
+    }
+    .client_owl-carousel .item {
+      display: flex;
+      justify-content: center;
+      width: 100%; /* Ensure the item takes full width */
+    }
+  </style>
+</head>
+<body>
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h2>What says our <span>Customers</span></h2>
+      </div>
+      <div class="carousel-wrap">
+        <div class="owl-carousel client_owl-carousel">
+          {% for i in customer_reviews %}
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{{i.img.url}}" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>{{i.name}}</h6>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>{{i.reviews}}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- custom js -->
+  <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('.client_owl-carousel').owlCarousel({
+        items: 2, // Show 2 items
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1 // Show 1 item on small screens
+          },
+          600: {
+            items: 2 // Show 2 items on medium screens
+          },
+          1000: {
+            items: 2 // Show 2 items on large screens
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+  <!-- end client section -->
+{% endblock content %}
+
+
