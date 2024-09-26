@@ -5,6 +5,8 @@ This project is designed to create a comprehensive website providing information
 ## Project Purpose
 
 The key objectives of the IT PARK project are:
+
+
 -Offering IT courses and technical training.
 
 -Providing educational programs in programming, cybersecurity, and other tech-related fields.
