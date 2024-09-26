@@ -1,21 +1,10 @@
 # IT PARK Project
 
-This project aims to create a website providing information about IT PARK courses and services.
+This project is designed to create a comprehensive website providing information about IT PARK's courses, training, and services aimed at both students and professionals in the tech industry.
 
 ## Project Purpose
 
-The objectives of the IT PARK project are:
-- To offer IT courses and training
-- To provide educational programs in programming and technologies
-- To create resources for students and professionals
-
-## Running the Project
-
-To run the project on your local machine, follow these steps:
-
-### Requirements
-
-Before starting the project, ensure you have the following installed:
-- Python 3.8 or higher
-- pip (Python package manager)
-- virtualenv (for creating virtual environments)
+The key objectives of the IT PARK project are:
+-Offering IT courses and technical training.
+-Providing educational programs in programming, cybersecurity, and other tech-related fields.
+-Serving as a resource hub for both beginners and experienced professionals.
